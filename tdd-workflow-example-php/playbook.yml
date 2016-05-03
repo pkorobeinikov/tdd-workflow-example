@@ -1,0 +1,28 @@
+---
+- hosts: all
+  become: true
+  tasks:
+    - name: add php repo
+      apt_repository: repo='ppa:ondrej/php'
+      register: result
+
+    - name: update apt cache
+      apt: update_cache=yes
+      when: result|changed
+
+    - name: install packages
+      apt: name={{ item }} state=latest
+      with_items:
+        - unzip
+        - git-core
+        - php-cli
+        - php-xml
+        - php-xdebug
+
+    - name: install php packages
+      get_url:
+        dest={{ item.dest }}
+        url={{ item.url }}
+        mode=0755
+      with_items:
+        - { dest: "/usr/local/bin/composer", url: "https://getcomposer.org/composer.phar" }
