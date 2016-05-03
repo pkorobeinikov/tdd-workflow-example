@@ -1,0 +1,7 @@
+# Vagrant stuff
+!Vagrantfile
+.vagrant/
+
+# Composer stuff
+bin/
+vendor/
