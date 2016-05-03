@@ -26,4 +26,9 @@ class GreeterTest extends \PHPUnit_Framework_TestCase
             ['expected' => 'Hi!', 'given' => ''],
         ];
     }
+
+    public function testLoudGreet()
+    {
+        static::assertEquals('HI!', $this->sut->loudGreet(''));
+    }
 }

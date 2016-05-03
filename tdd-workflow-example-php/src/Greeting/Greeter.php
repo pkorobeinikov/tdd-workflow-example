@@ -13,4 +13,9 @@ final class Greeter
 
         return "Hello, $name!";
     }
+
+    public function loudGreet(string $name) : string
+    {
+        return strtoupper($this->greet($name));
+    }
 }
