@@ -23,6 +23,7 @@ class GreeterTest extends \PHPUnit_Framework_TestCase
         return [
             ['expected' => 'Hello, World!', 'given' => 'World'],
             ['expected' => 'Hello, Tests!', 'given' => 'Tests'],
+            ['expected' => 'Hi!', 'given' => ''],
         ];
     }
 }
