@@ -10,13 +10,13 @@ import java.util.Arrays;
 import static org.junit.Assert.*;
 
 @RunWith(Parameterized.class)
-public class GreeterTest {
+public class GreeterGreetTest {
     private Greeter sut;
 
     public String expected;
     public String given;
 
-    public GreeterTest(String expected, String given) {
+    public GreeterGreetTest(String expected, String given) {
         this.expected = expected;
         this.given = given;
     }
@@ -38,10 +38,5 @@ public class GreeterTest {
     @Test
     public void greet() {
         assertEquals(expected, sut.greet(given));
-    }
-
-    @Test
-    public void loudGreet() {
-        assertEquals(expected.toUpperCase(), sut.loudGreet(given));
     }
 }
