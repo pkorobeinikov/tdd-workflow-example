@@ -21,7 +21,7 @@ public class GreeterLoudGreetTest {
         this.given = given;
     }
 
-    @Parameterized.Parameters(name = "name={1}: greet({1})={0}")
+    @Parameterized.Parameters(name = "name={1}: loudGreet({1})={0}")
     public static Iterable<Object[]> data() {
         return Arrays.asList(new Object[][]{
                 {"HELLO, WORLD!", "World"},
