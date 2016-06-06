@@ -16,6 +16,11 @@ public class GreeterTest {
     public String expected;
     public String given;
 
+    public GreeterTest(String expected, String given) {
+        this.expected = expected;
+        this.given = given;
+    }
+
     @Parameterized.Parameters(name = "name={1}: greet({1})={0}")
     public static Iterable<Object[]> data() {
         return Arrays.asList(new Object[][]{
@@ -28,11 +33,6 @@ public class GreeterTest {
     @Before
     public void setUp() {
         sut = new Greeter();
-    }
-
-    public GreeterTest(String expected, String given) {
-        this.expected = expected;
-        this.given = given;
     }
 
     @Test
