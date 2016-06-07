@@ -27,8 +27,18 @@ class GreeterTest extends \PHPUnit_Framework_TestCase
         ];
     }
 
-    public function testLoudGreet()
+    /** @dataProvider provideLoudGreetingData */
+    public function testLoudGreet(string $expected, string $given)
     {
-        static::assertEquals('HI!', $this->sut->loudGreet(''));
+        static::assertEquals($expected, $this->sut->loudGreet($given));
+    }
+
+    public function provideLoudGreetingData()
+    {
+        return [
+            ['expected' => 'HELLO, WORLD!', 'given' => 'World'],
+            ['expected' => 'HELLO, TESTS!', 'given' => 'Tests'],
+            ['expected' => 'HI!', 'given' => ''],
+        ];
     }
 }
